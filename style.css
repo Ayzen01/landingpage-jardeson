@@ -1,0 +1,360 @@
+/* RESET E CONFIGURAÇÕES DE CORES BASE */
+:root {
+    --primary-color: #1b4d3e;      /* Verde Escuro Clínico */
+    --accent-color: #00cc66;       /* Verde WhatsApp de Alta Conversão */
+    --accent-hover: #00b359;
+    --text-dark: #222222;
+    --text-muted: #666666;
+    --bg-light: #fbfdfb;           /* Fundo off-white com toque sutil de verde */
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* MARCA D'ÁGUA ORGÂNICA DE FUNDO (Linhas fluidas da referência) */
+.watermark-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="2000" viewBox="0 0 1000 2000"><path d="M150,100 Q400,300 200,700 T600,1300 T100,1900" fill="none" stroke="rgba(27,77,62,0.03)" stroke-width="40" stroke-linecap="round"/></svg>');
+    background-size: cover;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* CABEÇALHO PREMIUM */
+header {
+    background-color: rgba(140, 207, 176, 0.959);
+    padding: 20px 40px;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.header-container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.logo {
+    float: left;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--primary-color);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span { color: var(--accent-color); }
+
+.nav-menu {
+    float: right;
+    list-style: none;
+    margin-top: 5px;
+}
+
+.nav-menu li { display: inline-block; margin-left: 30px; }
+.nav-menu li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+.nav-menu li a:hover { color: var(--primary-color); }
+
+/* SEÇÃO HERO */
+.hero-section {
+    max-width: 1140px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.hero-left { width: 55%; float: left; padding-right: 50px; }
+.hero-right { width: 45%; float: right; display: flex; justify-content: center; }
+
+.hero-left h1 {
+    font-size: 46px;
+    color: #111111;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.hero-left h1 .highlight {
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.hero-left h1 .highlight::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background: var(--accent-color);
+    bottom: 5px;
+    left: 0;
+    border-radius: 2px;
+}
+
+.subtitle {
+    font-size: 17px;
+    color: #4a5568;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+.location-info {
+    font-size: 14px;
+    color: #2d3748;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.rating-info {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 35px;
+}
+
+/* BOTÃO DE CONVERSÃO WHATSAPP (IGUAL À REFERÊNCIA) */
+.btn-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #00e676 0%, #00c853 100%);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 0 7px 20px rgba(0, 200, 83, 0.3);
+    transition: all 0.3s transform ease;
+    margin-bottom: 40px;
+}
+
+.btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 200, 83, 0.4);
+}
+
+.btn-cta i { font-size: 22px; }
+
+/* LISTA DE DEPOIMENTOS (Estilo clean flutuante) */
+.testimonial-container {
+    margin-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 30px;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid rgba(0,0,0,0.01);
+}
+
+.avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 18px;
+    border: 2px solid #e8f5e9;
+}
+
+.test-content .author-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #111;
+}
+
+.test-content p {
+    font-size: 14px;
+    color: #4a5568;
+    margin-top: 5px;
+    font-style: normal;
+}
+
+/* MOLDURA EM CURVA ORGÂNICA (Estética Premium da foto) */
+.hero-shape {
+    background: #115544;
+    border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    padding: 25px;
+    max-width: 440px;
+}
+
+.feature-shape {
+    background: #eaf4f0;
+    border-radius: 50% 50% 30% 70% / 50% 60% 40% 50%;
+    padding: 25px;
+    max-width: 400px;
+}
+
+.main-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: inherit; /* Herda o formato orgânico */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+/* SEÇÃO CARACTERÍSTICAS / O QUE É */
+.features-section {
+    background-color: #ffffff;
+    padding: 90px 0;
+    margin-top: 80px;
+    border-top: 1px solid rgba(0,0,0,0.02);
+}
+
+.features-container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+.features-left { width: 40%; float: left; }
+.features-right { width: 60%; float: right; padding-left: 60px; }
+
+.features-right h2 {
+    font-size: 34px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.features-intro { font-size: 16px; color: #4a5568; margin-bottom: 35px; }
+
+.feature-list { list-style: none; }
+.feature-list li {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 22px;
+    position: relative;
+    padding-left: 40px;
+}
+
+.feature-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 26px;
+    background-color: #eaf4f0;
+    color: var(--accent-color);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 26px;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.cta-center-section { text-align: center; padding: 60px 20px; }
+
+/* SEÇÃO FINAL DE CONVERSÃO (LINDO CONTRASTE VERDE ESCURO) */
+.final-cta-section {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.final-cta-container { max-width: 750px; margin: 0 auto; }
+.final-cta-container h2 { font-size: 38px; margin-bottom: 20px; font-weight: 800; }
+.final-cta-container p { font-size: 16px; margin-bottom: 40px; opacity: 0.85; }
+
+.btn-large { padding: 20px 50px; font-size: 19px; }
+
+.sub-text {
+    display: block;
+    font-size: 12px;
+    margin-top: -20px;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* IMAGEM PRE-RODAPÉ (Skyline/Prédio da Referência) */
+.footer-image-section {
+    height: 180px;
+    background: url('https://images.unsplash.com/photo-1542362567-b07eac790abc?auto=format&fit=crop&w=1200&q=80') no-repeat center center;
+    background-size: cover;
+    opacity: 0.15;
+    filter: grayscale(100%);
+}
+
+/* RODAPÉ */
+footer {
+    background-color: #12342a;
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid rgba(140, 207, 176, 0.959);
+}
+
+/* WHATSAPP FLUTUANTE FIXO NO CANTO DA TELA */
+.whatsapp-floating {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.whatsapp-floating:hover { transform: scale(1.1); }
+
+/* RESPONSIVIDADE EXCELENTE PARA CELULAR */
+@media (max-width: 768px) {
+    .hero-left, .hero-right, .features-left, .features-right {
+        width: 100%;
+        float: none;
+        padding: 0;
+    }
+    .hero-right { margin-top: 40px; }
+    .features-right { margin-top: 40px; }
+    .nav-menu { display: none; }
+    .hero-left h1 { font-size: 32px; }
+    .final-cta-container h2 { font-size: 28px; }
+    .btn-large { font-size: 15px; padding: 15px 20px; }
+}
