@@ -84,16 +84,15 @@
     }
 
     h3 {
-  color: #d4af37; /* dourado */
-  margin-bottom: 10px;
-}
+      color: #d4af37; /* dourado */
+      margin-bottom: 10px;
+    }
 
-p {
-  color: #ccc;
-  font-size: 14pt;
-  margin-bottom: 20px;
-}
-
+    p {
+      color: #ccc;
+      font-size: 14pt;
+      margin-bottom: 20px;
+    }
 
     .sobre, .procedimentos, .profissional {
       margin-bottom: 60px;
@@ -113,6 +112,14 @@ p {
       text-align: center;
       border: 2px solid #333;
       transition: 0.3s;
+      opacity: 0; /* invisível até animar */
+      transform: translateY(30px);
+    }
+
+    .card.show {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.8s ease;
     }
 
     .card:hover {
@@ -159,24 +166,29 @@ p {
       <h1>Restaure e Potencialize Seu Corpo com Terapias Avançadas</h1>
       <p>Recupere o equilíbrio e alcance alta performance com atendimento personalizado e protocolos de excelência em reabilitação e bem-estar.</p>
       <a href="https://wa.me/11991890914?text=Olá%20gostaria%20de%20agendar%20uma%20avaliação" class="btn">Agendar Avaliação</a>
-
     </div>
     <div class="hero-img">
-  <img src="images/banjk.png" alt="Foto destaque">
-</div>
+      <img src="images/banjk.png" alt="Foto destaque">
+    </div>
   </section>
 
   <section class="sobre">
     <h1>Sobre Nós</h1>
     <p>Atendimento individualizado com protocolos eficazes, que vão desde o alívio das dores até a conquista da máxima performance.</p>
-     <h3>Acolhimento e escuta atenta</h3>
-  <p>Você compartilha suas queixas e sintomas, nós entendemos o que o seu corpo realmente precisa para se recuperar.</p>
-
-  <h3>Avaliação completa e protocolo individualizado</h3>
-  <p>Nada de soluções isoladas. Criamos um plano de tratamento estruturado de acordo com a sua condição e necessidade específica.</p>
-
-  <h3>Tratamento integrativo e funcional</h3>
-  <p>Selecionamos os recursos terapêuticos que aceleram a regeneração, reduzem dores e fortalecem o corpo para prevenir novas lesões.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Acolhimento e escuta atenta</h3>
+        <p>Você compartilha suas queixas e sintomas, nós entendemos o que o seu corpo realmente precisa para se recuperar.</p>
+      </div>
+      <div class="card">
+        <h3>Avaliação completa e protocolo individualizado</h3>
+        <p>Nada de soluções isoladas. Criamos um plano de tratamento estruturado de acordo com a sua condição e necessidade específica.</p>
+      </div>
+      <div class="card">
+        <h3>Tratamento integrativo e funcional</h3>
+        <p>Selecionamos os recursos terapêuticos que aceleram a regeneração, reduzem dores e fortalecem o corpo para prevenir novas lesões.</p>
+      </div>
+    </div>
   </section>
 
   <section class="procedimentos">
@@ -214,6 +226,26 @@ p {
   <footer>
     © 2026 Clínica Jardeson Kelton - Todos os direitos reservados.
   </footer>
+  <a href="https://wa.me/11991890914?text=Olá%20gostaria%20de%20agendar%20uma%20avaliação" class="btn">Agendar Avaliação</a>
+
+  <script>
+    // Intersection Observer para animar os cards ao entrar na tela
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
+
    <a href="https://wa.me/11991890914?text=Olá%20gostaria%20de%20agendar%20uma%20avaliação" class="btn">Agendar Avaliação</a>
 
 </body>
