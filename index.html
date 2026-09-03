@@ -99,51 +99,61 @@
     }
 
     .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
 
-    .card {
-      flex: 1 1 250px;
-      background: #222;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      border: 2px solid #333;
-      transition: 0.3s;
-      opacity: 0; /* invisível até animar */
-      transform: translateY(30px);
-    }
+.card {
+  flex: 1 1 300px;
+  color: #eee;
+  padding: 30px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #333;
+  background-size: cover;
+  background-position: center;
+  transition: 0.4s;
+  opacity: 0; /* invisível até animar */
+  transform: translateY(30px);
+}
 
-    .card.show {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.8s ease;
-    }
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* overlay escuro */
+}
 
-    .card:hover {
-      border-color: #d4af37;
-    }
+.card h3, .card p {
+  position: relative;
+  z-index: 1;
+}
 
-    .card img {
-      width: 100%;
-      height: 200px; /* tamanho padrão das fotos dos cards */
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 15px;
-      border: 2px solid #d4af37;
-    }
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s ease;
+}
 
-    .card h3 {
-      color: #d4af37;
-      margin-bottom: 10px;
-    }
+.card:hover {
+  border-color: #d4af37;
+  transform: scale(1.03);
+}
 
-    .card p {
-      color: #ccc;
-      font-size: 12pt;
-    }
+/* Fotos de fundo */
+.card1 {
+  background-image: url('images/acolhimento.jpg');
+}
+.card2 {
+  background-image: url('images/avaliacao.jpg');
+}
+.card3 {
+  background-image: url('images/tratamento.jpg');
+}
+
 
     footer {
       background: #000;
@@ -173,23 +183,27 @@
   </section>
 
   <section class="sobre">
-    <h1>Sobre Nós</h1>
-    <p>Atendimento individualizado com protocolos eficazes, que vão desde o alívio das dores até a conquista da máxima performance.</p>
-    <div class="cards">
-      <div class="card">
-        <h3>Acolhimento e escuta atenta</h3>
-        <p>Você compartilha suas queixas e sintomas, nós entendemos o que o seu corpo realmente precisa para se recuperar.</p>
-      </div>
-      <div class="card">
-        <h3>Avaliação completa e protocolo individualizado</h3>
-        <p>Nada de soluções isoladas. Criamos um plano de tratamento estruturado de acordo com a sua condição e necessidade específica.</p>
-      </div>
-      <div class="card">
-        <h3>Tratamento integrativo e funcional</h3>
-        <p>Selecionamos os recursos terapêuticos que aceleram a regeneração, reduzem dores e fortalecem o corpo para prevenir novas lesões.</p>
-      </div>
+  <h1>Sobre Nós</h1>
+  <p>Atendimento individualizado com protocolos eficazes, que vão desde o alívio das dores até a conquista da máxima performance.</p>
+
+  <div class="cards">
+    <div class="card card1">
+      <h3>Acolhimento e escuta atenta</h3>
+      <p>Você compartilha suas queixas e sintomas, nós entendemos o que o seu corpo realmente precisa para se recuperar.</p>
     </div>
-  </section>
+
+    <div class="card card2">
+      <h3>Avaliação completa e protocolo individualizado</h3>
+      <p>Nada de soluções isoladas. Criamos um plano de tratamento estruturado de acordo com a sua condição e necessidade específica.</p>
+    </div>
+
+    <div class="card card3">
+      <h3>Tratamento integrativo e funcional</h3>
+      <p>Selecionamos os recursos terapêuticos que aceleram a regeneração, reduzem dores e fortalecem o corpo para prevenir novas lesões.</p>
+    </div>
+  </div>
+</section>
+
 
   <section class="procedimentos">
     <h2>Procedimentos</h2>
@@ -228,21 +242,19 @@
   </footer>
   <a href="https://wa.me/11991890914?text=Olá%20gostaria%20de%20agendar%20uma%20avaliação" class="btn">Agendar Avaliação</a>
 
-  <script>
-    // Intersection Observer para animar os cards ao entrar na tela
-    const cards = document.querySelectorAll('.card');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.2 });
-
-    cards.forEach(card => {
-      observer.observe(card);
+ <script>
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
     });
-  </script>
+  }, { threshold: 0.2 });
+
+  cards.forEach(card => observer.observe(card));
+</script>
+
 </body>
 </html>
 
