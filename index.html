@@ -1,119 +1,220 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Jardeson Kelton - Vença Traumas, Ansiedade e Inseguranças</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Jardeson Kelton</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #111; /* fundo escuro */
+      color: #eee;
+    }
+
+    header {
+      background: #000;
+      color: #d4af37; /* dourado */
+      padding: 20px 40px;
+      text-align: center;
+      font-size: 22pt;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 10%;
+      background-color: #1a1a1a;
+    }
+
+    .hero-text {
+      width: 50%;
+    }
+
+    .hero-text h1 {
+      font-size: 34pt;
+      color: #d4af37;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 14pt;
+      margin-bottom: 20px;
+      color: #ccc;
+    }
+
+    .hero-text .btn {
+      display: inline-block;
+      background: #d4af37;
+      color: #000;
+      padding: 15px 35px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .hero-text .btn:hover {
+      background: #b7952b;
+    }
+
+    .hero-img {
+      width: 69%;
+    }
+
+    .hero-img img {
+      width: 100%;
+      height: 400px; /* tamanho padrão da foto */
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #d4af37;
+    }
+
+    section {
+      padding: 60px 10%;
+    }
+
+    section h3 {
+      font-size: 26pt;
+      margin-bottom: 20px;
+      color: #d4af37;
+    }
+
+    h3 {
+  color: #d4af37; /* dourado */
+  margin-bottom: 10px;
+}
+
+p {
+  color: #ccc;
+  font-size: 14pt;
+  margin-bottom: 20px;
+}
+
+
+    .sobre, .procedimentos, .profissional {
+      margin-bottom: 60px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      flex: 1 1 250px;
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid #333;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      border-color: #d4af37;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px; /* tamanho padrão das fotos dos cards */
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      border: 2px solid #d4af37;
+    }
+
+    .card h3 {
+      color: #d4af37;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #ccc;
+      font-size: 12pt;
+    }
+
+    footer {
+      background: #000;
+      color: #d4af37;
+      text-align: center;
+      padding: 30px;
+      font-size: 10pt;
+      border-top: 1px solid #333;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="watermark-bg"></div>
+  <header>
+    Clínica Jardeson Kelton
+  </header>
 
-    <header>
-        <div class="header-container clearfix">
-            <a href="#" class="logo">Jardeson Kelton<span> Terapeuta</span></a>
-            <ul class="nav-menu">
-                <li><a href="#">Início</a></li>
-                <li><a href="#">O que é?</a></li>
-                <li><a href="#">Valores</a></li>
-                <li><a href="#">Depoimentos</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </div>
-    </header>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Restaure e Potencialize Seu Corpo com Terapias Avançadas</h1>
+      <p>Recupere o equilíbrio e alcance alta performance com atendimento personalizado e protocolos de excelência em reabilitação e bem-estar.</p>
+      <a href="https://wa.me/11991890914?text=Olá%20gostaria%20de%20agendar%20uma%20avaliação" class="btn">Agendar Avaliação</a>
 
-    <section class="hero-section clearfix">
-        <div class="hero-left">
-            <h1>Diga <span class="highlight">adeus</span> a dores, ansiedade e inseguranças</h1>
-            <p class="subtitle">Muito mais que uma simples terapia, somos referência em saúde emocional e reprogramação mental na região. Sob a condução do especialista <strong>Jardeson Kelton</strong>, ajudamos você a retomar o controle da sua história.</p>
-            
-            <p class="location-info">📍 Avenida Vereador José Donato, 873 Jacaré - 13315-000 - Cabreúva/SP</p>
-            <p class="rating-info">✓ Verificado <span class="stars">★★★★★</span> 5.0 (480+ avaliações no Google)</p>
-            
-            <a href="https://wa.me/5511999999999" class="btn-cta">
-                <i class="fab fa-whatsapp"></i> Agendar agora!
-            </a>
+    </div>
+    <div class="hero-img">
+  <img src="images/banjk.png" alt="Foto destaque">
+</div>
+  </section>
 
-            <div class="testimonial-container">
-                <div class="testimonial-card">
-                    <img src="images/jk4.PNG" alt="Lucas Lapa" class="avatar">
-                    <div class="test-content">
-                        <span class="author-name">Lucas Lapa</span>
-                        <div class="stars">★★★★★</div>
-                        <p>"Sentia fortes bloqueios por conta de traumas do passado. O atendimento humanizado me trouxe alívio desde as primeiras semanas."</p>
-                    </div>
-                </div>
+  <section class="sobre">
+    <h1>Sobre Nós</h1>
+    <p>Atendimento individualizado com protocolos eficazes, que vão desde o alívio das dores até a conquista da máxima performance.</p>
+     <h3>Acolhimento e escuta atenta</h3>
+  <p>Você compartilha suas queixas e sintomas, nós entendemos o que o seu corpo realmente precisa para se recuperar.</p>
 
-                <div class="testimonial-card">
-                    <img src="images/jk3.PNG" alt="Marcos S." class="avatar">
-                    <div class="test-content">
-                        <span class="author-name">Marcos S.</span>
-                        <div class="stars">★★★★★</div>
-                        <p>"Eu vivia refém de crises de ansiedade que me travavam no trabalho. Com o suporte do terapeuta Jardeson, hoje sinto que voltei a respirar em paz."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <h3>Avaliação completa e protocolo individualizado</h3>
+  <p>Nada de soluções isoladas. Criamos um plano de tratamento estruturado de acordo com a sua condição e necessidade específica.</p>
 
-        <div class="hero-right">
-            <div class="image-wrapper hero-shape">
-                <img src="images/jk2.jpg" alt="Sessão de terapia com Jardeson Kelton" class="main-img">
-            </div>
-        </div>
-    </section>
+  <h3>Tratamento integrativo e funcional</h3>
+  <p>Selecionamos os recursos terapêuticos que aceleram a regeneração, reduzem dores e fortalecem o corpo para prevenir novas lesões.</p>
+  </section>
 
-    <section class="features-section clearfix">
-        <div class="features-container">
-            <div class="features-left">
-                <div class="image-wrapper feature-shape">
-                    <img src="images/jk4.PNG" alt="Transformação mental e bem-estar" class="main-img">
-                </div>
-            </div>
+  <section class="procedimentos">
+    <h2>Procedimentos</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/jk3.PNG" alt="Procedimento 1">
+        <h3>Liberação Sniper</h3>
+        <p>Redução de tensões e dores musculares.</p>
+      </div>
+      <div class="card">
+        <img src="images/cone.jpeg" alt="Procedimento 2">
+        <h3>Terapia do Cone Hindu</h3>
+        <p>Equilíbrio energético e alívio de dores.</p>
+      </div>
+      <div class="card">
+        <img src="images/ventosa.jpeg" alt="Procedimento 3">
+        <h3>Ventosaterapia</h3>
+        <p>Melhora da circulação e recuperação muscular.</p>
+      </div>
+    </div>
+  </section>
 
-            <div class="features-right">
-                <h2>Como a nossa Abordagem Terapêutica funciona?</h2>
-                <p class="features-intro">Nossos protocolos clínicos utilizam técnicas validadas pela neurociência e psicologia integrativa para desarmar gatilhos da ansiedade de forma acelerada, permitindo que você sinta resultados profundos a partir da primeira sessão.</p>
-                
-                <ul class="feature-list">
-                    <li>Alívio imediato da sobrecarga mental e emocional</li>
-                    <li>Ressignificação profunda de traumas e bloqueios do passado</li>
-                    <li>Desenvolvimento de uma autoestima e segurança inabaláveis</li>
-                    <li>Recuperação do foco, da sua energia vital e do equilíbrio interno</li>
-                    <li>Melhora significativa na qualidade do sono e bem-estar geral</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+  <section class="profissional">
+    <h2>Conheça o Profissional</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="images/foto-profissional.jpg" alt="Profissional">
+        <h3>Jardeson Kelton</h3>
+        <p>Gestor de Reabilitação e Performance Física, com mais de 10 anos de experiência.</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="cta-center-section">
-        <a href="https://wa.me/5511999999999" class="btn-cta">
-            <i class="fab fa-whatsapp"></i> Agendar agora!
-        </a>
-    </section>
-
-    <section class="final-cta-section">
-        <div class="final-cta-container">
-            <h2>Chegou a hora de cuidar de você.</h2>
-            <p>O medo e a ansiedade não precisam ser os donos do seu futuro. Investir na sua saúde mental é o maior ato de coragem e amor-próprio que você pode ter hoje. Clique no botão abaixo, fale com o especialista Jardeson Kelton e sua equipe e dê o primeiro passo em direção a uma vida mais leve e confiante.</p>
-            <a href="https://wa.me/5511999999999" class="btn-cta btn-large">
-                <i class="fab fa-whatsapp"></i> AGENDAR MINHA CONSULTA AGORA
-            </a>
-            <span class="sub-text">*Vagas limitadas para esta semana. Atendimento 100% sigiloso e humanizado.*</span>
-        </div>
-    </section>
-
-    <section class="footer-image-section"></section>
-
-    <footer>
-        <p>Copyright © 2026 Clínica Jardeson Kelton de Saúde Mental & Bem-Estar LTDA. Todos os direitos reservados.</p>
-        <p style="margin-top: 10px; font-size: 9pt; opacity: 0.7;">Atendimentos presenciais e online com total sigilo ético profissional.</p>
-    </footer>
-
-    <a href="https://wa.me/5511999999999" class="whatsapp-floating" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+  <footer>
+    © 2026 Clínica Jardeson Kelton - Todos os direitos reservados.
+  </footer>
+   <a href="https://wa.me/11991890914?text=Olá%20gostaria%20de%20agendar%20uma%20avaliação" class="btn">Agendar Avaliação</a>
 
 </body>
 </html>
